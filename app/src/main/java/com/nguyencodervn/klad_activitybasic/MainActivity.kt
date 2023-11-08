@@ -18,5 +18,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
+        // Tìm hiểu về Logcat trong Android
     }
 }
