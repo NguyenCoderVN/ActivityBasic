@@ -1,8 +1,9 @@
 package com.nguyencodervn.klad_activitybasic
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainToABt : Button
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         mainToABt.setOnClickListener {
             // Tạo câu lệnh chuyển sang Activity A
+            val intent = Intent(this, ActivityA::class.java)
+            startActivity(intent)
         }
     }
 }
