@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="40dp"
         android:text="MainActivity"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -19,16 +19,8 @@
         android:id="@+id/mainToABt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="40dp"
         android:text="Go to Activity A"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/mainToBBt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:text="Go to Activity B"
         android:textSize="24sp" />
 
 </LinearLayout>
