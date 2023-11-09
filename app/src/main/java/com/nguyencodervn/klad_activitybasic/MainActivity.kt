@@ -2,8 +2,10 @@ package com.nguyencodervn.klad_activitybasic
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainToABt : Button
@@ -19,5 +21,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         // Tìm hiểu về Logcat trong Android
+        Log.i(TAG, "Welcome to Android Kotlin")
+        Timber.i("Welcome to Android by Timber");
+    }
+    companion object {
+        const val TAG = "MainActivity"
     }
 }
