@@ -16,15 +16,8 @@ class MainActivity : AppCompatActivity() {
         mainToABt = findViewById(R.id.mainToABt)
 
         mainToABt.setOnClickListener {
-            // Tạo câu lệnh chuyển sang Activity A
             val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
-        // Tìm hiểu về Logcat trong Android
-        Log.i(TAG, "Welcome to Android Kotlin")
-        Timber.i("Welcome to Android by Timber");
-    }
-    companion object {
-        const val TAG = "MainActivity"
     }
 }
