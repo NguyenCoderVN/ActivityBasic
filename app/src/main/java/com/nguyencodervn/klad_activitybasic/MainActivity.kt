@@ -7,9 +7,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleOwner
 import timber.log.Timber
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), LifecycleEventObserver {
     private lateinit var mainToABt: Button
     private lateinit var countBt: Button
     private lateinit var finishBt: Button
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        lifecycle.addObserver(this)
         initId()
         setupEven()
     }
@@ -49,6 +53,18 @@ class MainActivity : AppCompatActivity() {
         countBt.setOnClickListener {
             count += 1
             countTv.text = count.toString()
+        }
+    }
+
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+        when (event) {
+            Lifecycle.Event.ON_STOP -> Timber.i("onStop");
+            Lifecycle.Event.ON_CREATE -> Timber.i("onCreate");
+            Lifecycle.Event.ON_START -> Timber.i("onStart");
+            Lifecycle.Event.ON_RESUME -> Timber.i("onResume")
+            Lifecycle.Event.ON_PAUSE -> Timber.i("onPause");
+            Lifecycle.Event.ON_DESTROY -> Timber.i("onDestroy");
+            Lifecycle.Event.ON_ANY -> Timber.i("onAny");
         }
     }
 }
