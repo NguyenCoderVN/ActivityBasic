@@ -26,6 +26,27 @@ class MainActivity : AppCompatActivity(), LifecycleEventObserver {
         lifecycle.addObserver(this)
         initId()
         setupEven()
+//        if (savedInstanceState!=null) {
+//            count = savedInstanceState.getInt(KEY_COUNT)
+//            countTv.text = count.toString()
+//        }
+    }
+
+    companion object {
+        const val KEY_COUNT = "KEY_COUNT"
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(KEY_COUNT, count)
+        Timber.i("onSaveInstanceState")
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        count = savedInstanceState.getInt(KEY_COUNT)
+        countTv.text = count.toString()
+        Timber.i("onRestoreInstanceState")
     }
 
     @SuppressLint("SetTextI18n")
