@@ -15,7 +15,6 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity(), LifecycleEventObserver {
     private lateinit var mainToABt: Button
     private lateinit var countBt: Button
-    private lateinit var finishBt: Button
     private lateinit var countTv: TextView
     private lateinit var mainTv: TextView
     private var count: Int = 0
@@ -26,10 +25,6 @@ class MainActivity : AppCompatActivity(), LifecycleEventObserver {
         lifecycle.addObserver(this)
         initId()
         setupEven()
-//        if (savedInstanceState!=null) {
-//            count = savedInstanceState.getInt(KEY_COUNT)
-//            countTv.text = count.toString()
-//        }
     }
 
     companion object {
@@ -53,7 +48,6 @@ class MainActivity : AppCompatActivity(), LifecycleEventObserver {
     private fun initId() {
         mainToABt = findViewById(R.id.mainToABt)
         countBt = findViewById(R.id.countBt)
-        finishBt = findViewById(R.id.finishBt)
         countTv = findViewById(R.id.countTv)
         mainTv = findViewById(R.id.mainTv)
         countTv.text = "0"
@@ -65,10 +59,6 @@ class MainActivity : AppCompatActivity(), LifecycleEventObserver {
         mainToABt.setOnClickListener {
             val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
-        }
-
-        finishBt.setOnClickListener {
-            finish()
         }
 
         countBt.setOnClickListener {
