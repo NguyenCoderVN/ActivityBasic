@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var mainToABt: Button
     private lateinit var countBt: Button
-    private lateinit var countTv: TextView
+    private lateinit var sendBt: Button
+
     private lateinit var mainTv: TextView
+    private lateinit var countTv: TextView
     private var count: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupEven() {
-        mainToABt.setOnClickListener {
+
+        sendBt.setOnClickListener {
             val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
@@ -36,15 +38,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val KEY_ACTIVITY = "KEY_ACTIVITY"
         const val KEY_COUNT = "KEY_COUNT"
+        const val KEY_OBJECT = "KEY_OBJECT"
     }
 
     @SuppressLint("SetTextI18n")
     private fun initId() {
-        mainToABt = findViewById(R.id.mainToABt)
+        sendBt = findViewById(R.id.sendBt)
         countBt = findViewById(R.id.countBt)
-        countTv = findViewById(R.id.countTv)
+
         mainTv = findViewById(R.id.mainTv)
+        countTv = findViewById(R.id.countTv)
+
         countTv.text = "0"
         val api = Build.VERSION.SDK_INT
         mainTv.text = "MainActivity run API $api"

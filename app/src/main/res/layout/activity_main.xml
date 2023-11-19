@@ -34,20 +34,11 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/mainToABt"
+        android:id="@+id/sendBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
-        android:text="Go to Activity A"
+        android:text="Send Value"
         android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/returnTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:text="Return Value"
-        android:textSize="24sp"
-        android:textStyle="bold" />
 
 </LinearLayout>
