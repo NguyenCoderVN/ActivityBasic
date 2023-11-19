@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sendObj01Bt: Button
     private lateinit var sendObj02Bt: Button
     private lateinit var sendBundleBt: Button
-
     private lateinit var mainTv: TextView
     private lateinit var countTv: TextView
+    private lateinit var returnTv: TextView
     private var count: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         const val KEY_ACTIVITY = "KEY_ACTIVITY"
         const val KEY_COUNT = "KEY_COUNT"
         const val KEY_OBJECT = "KEY_OBJECT"
+        const val KEY_RETURN = "KEY_RETURN"
     }
 
     @SuppressLint("SetTextI18n")
@@ -71,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         mainTv = findViewById(R.id.mainTv)
         countTv = findViewById(R.id.countTv)
+        returnTv = findViewById(R.id.returnTv)
 
         countTv.text = "0"
         val api = Build.VERSION.SDK_INT

@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 class ActivityA : AppCompatActivity() {
     private lateinit var receivedTv: TextView
     private lateinit var returnBt: Button
+    private var count: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a)
