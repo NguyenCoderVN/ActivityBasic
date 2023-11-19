@@ -27,24 +27,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupEven() {
+        val intent = Intent(this, ActivityA::class.java)
+        val transfer01 = Transfer01("Kotlin-Serializable", Build.VERSION.SDK_INT)
+        val transfer02 = Transfer02("Kotlin-Parcelable", Build.VERSION.SDK_INT)
 
         sendNormalBt.setOnClickListener {
-            val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
 
         sendObj01Bt.setOnClickListener {
-            val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
 
         sendObj02Bt.setOnClickListener {
-            val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
 
         sendBundleBt.setOnClickListener {
-            val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
 
