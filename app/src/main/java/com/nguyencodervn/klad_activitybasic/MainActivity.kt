@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var countBt: Button
-    private lateinit var sendBt: Button
+    private lateinit var sendNormalBt: Button
+    private lateinit var sendObj01Bt: Button
+    private lateinit var sendObj02Bt: Button
+    private lateinit var sendBundleBt: Button
 
     private lateinit var mainTv: TextView
     private lateinit var countTv: TextView
@@ -25,7 +28,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupEven() {
 
-        sendBt.setOnClickListener {
+        sendNormalBt.setOnClickListener {
+            val intent = Intent(this, ActivityA::class.java)
+            startActivity(intent)
+        }
+
+        sendObj01Bt.setOnClickListener {
+            val intent = Intent(this, ActivityA::class.java)
+            startActivity(intent)
+        }
+
+        sendObj02Bt.setOnClickListener {
+            val intent = Intent(this, ActivityA::class.java)
+            startActivity(intent)
+        }
+
+        sendBundleBt.setOnClickListener {
             val intent = Intent(this, ActivityA::class.java)
             startActivity(intent)
         }
@@ -45,10 +63,10 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun initId() {
-        sendBt = findViewById(R.id.sendNormalBt)
-        sendBt = findViewById(R.id.sendObj01Bt)
-        sendBt = findViewById(R.id.sendObj02Bt)
-        sendBt = findViewById(R.id.sendBundleBt)
+        sendNormalBt = findViewById(R.id.sendNormalBt)
+        sendObj01Bt = findViewById(R.id.sendObj01Bt)
+        sendObj02Bt = findViewById(R.id.sendObj02Bt)
+        sendBundleBt = findViewById(R.id.sendBundleBt)
         countBt = findViewById(R.id.countBt)
 
         mainTv = findViewById(R.id.mainTv)
