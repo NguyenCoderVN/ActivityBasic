@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         initId()
         setupEven()
     }
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val KEY_KIND = "KEY_KIND"
         const val KEY_ACTIVITY = "KEY_ACTIVITY"
         const val KEY_COUNT = "KEY_COUNT"
         const val KEY_OBJECT = "KEY_OBJECT"
@@ -45,7 +45,10 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun initId() {
-        sendBt = findViewById(R.id.sendBt)
+        sendBt = findViewById(R.id.sendNormalBt)
+        sendBt = findViewById(R.id.sendObj01Bt)
+        sendBt = findViewById(R.id.sendObj02Bt)
+        sendBt = findViewById(R.id.sendBundleBt)
         countBt = findViewById(R.id.countBt)
 
         mainTv = findViewById(R.id.mainTv)
