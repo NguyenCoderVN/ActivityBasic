@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val KEY_ACTIVITY = "KEY_ACTIVITY"
         const val KEY_COUNT = "KEY_COUNT"
+        const val KEY_RETURN = "KEY_RETURN"
     }
 
     @SuppressLint("SetTextI18n")
