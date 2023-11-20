@@ -1,15 +1,9 @@
 package com.nguyencodervn.klad_activitybasic
 
-import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.nguyencodervn.klad_activitybasic.MainActivity.Companion.KEY_ACTIVITY
-import com.nguyencodervn.klad_activitybasic.MainActivity.Companion.KEY_COUNT
-import com.nguyencodervn.klad_activitybasic.MainActivity.Companion.KEY_KIND
-import com.nguyencodervn.klad_activitybasic.MainActivity.Companion.KEY_OBJECT
 
 
 class ActivityA : AppCompatActivity() {
