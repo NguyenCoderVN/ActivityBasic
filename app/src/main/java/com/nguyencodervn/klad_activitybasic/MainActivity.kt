@@ -11,9 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
     private lateinit var countBt: Button
     private lateinit var sendNormalBt: Button
-    private lateinit var sendObj01Bt: Button
-    private lateinit var sendObj02Bt: Button
-    private lateinit var sendBundleBt: Button
     private lateinit var mainTv: TextView
     private lateinit var countTv: TextView
     private lateinit var returnTv: TextView
@@ -28,41 +25,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupEven() {
         val intent = Intent(this, ActivityA::class.java)
-        val transfer01 = Transfer01("Kotlin-Serializable", Build.VERSION.SDK_INT)
-        val transfer02 = Transfer02("Kotlin-Parcelable", Build.VERSION.SDK_INT)
 
         sendNormalBt.setOnClickListener {
             intent.putExtra(KEY_ACTIVITY, "MainActivity")
             intent.putExtra(KEY_COUNT, count)
-            intent.putExtra(KEY_KIND, "Single")
             startActivity(intent)
         }
 
-        sendObj01Bt.setOnClickListener {
-            intent.putExtra(KEY_ACTIVITY, "MainActivity")
-            intent.putExtra(KEY_COUNT, count)
-            intent.putExtra(KEY_OBJECT,transfer01)
-            intent.putExtra(KEY_KIND, "Serializable")
-            startActivity(intent)
-        }
-
-        sendObj02Bt.setOnClickListener {
-            intent.putExtra(KEY_ACTIVITY, "MainActivity")
-            intent.putExtra(KEY_COUNT, count)
-            intent.putExtra(KEY_OBJECT,transfer02)
-            intent.putExtra(KEY_KIND, "Parcelable")
-            startActivity(intent)
-        }
-
-        sendBundleBt.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString(KEY_ACTIVITY, "MainActivity")
-            bundle.putInt(KEY_COUNT, count)
-            bundle.putParcelable(KEY_OBJECT,transfer02)
-            bundle.putString(KEY_KIND, "Bundle")
-            intent.putExtras(bundle)
-            startActivity(intent)
-        }
 
         countBt.setOnClickListener {
             count += 1
@@ -71,18 +40,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val KEY_KIND = "KEY_KIND"
         const val KEY_ACTIVITY = "KEY_ACTIVITY"
         const val KEY_COUNT = "KEY_COUNT"
-        const val KEY_OBJECT = "KEY_OBJECT"
     }
 
     @SuppressLint("SetTextI18n")
     private fun initId() {
         sendNormalBt = findViewById(R.id.sendNormalBt)
-        sendObj01Bt = findViewById(R.id.sendObj01Bt)
-        sendObj02Bt = findViewById(R.id.sendObj02Bt)
-        sendBundleBt = findViewById(R.id.sendBundleBt)
         countBt = findViewById(R.id.countBt)
 
         mainTv = findViewById(R.id.mainTv)
