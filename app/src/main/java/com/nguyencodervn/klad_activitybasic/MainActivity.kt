@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         const val KEY_ACTIVITY = "KEY_ACTIVITY"
         const val KEY_COUNT = "KEY_COUNT"
         const val KEY_RETURN = "KEY_RETURN"
+        const val REQUEST_CODE = 100
     }
 
     @SuppressLint("SetTextI18n")
