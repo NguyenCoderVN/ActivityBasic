@@ -32,18 +32,35 @@ class MainActivity : AppCompatActivity() {
         val transfer02 = Transfer02("Kotlin-Parcelable", Build.VERSION.SDK_INT)
 
         sendNormalBt.setOnClickListener {
+            intent.putExtra(KEY_ACTIVITY, "MainActivity")
+            intent.putExtra(KEY_COUNT, count)
+            intent.putExtra(KEY_KIND, "Single")
             startActivity(intent)
         }
 
         sendObj01Bt.setOnClickListener {
+            intent.putExtra(KEY_ACTIVITY, "MainActivity")
+            intent.putExtra(KEY_COUNT, count)
+            intent.putExtra(KEY_OBJECT,transfer01)
+            intent.putExtra(KEY_KIND, "Serializable")
             startActivity(intent)
         }
 
         sendObj02Bt.setOnClickListener {
+            intent.putExtra(KEY_ACTIVITY, "MainActivity")
+            intent.putExtra(KEY_COUNT, count)
+            intent.putExtra(KEY_OBJECT,transfer02)
+            intent.putExtra(KEY_KIND, "Parcelable")
             startActivity(intent)
         }
 
         sendBundleBt.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString(KEY_ACTIVITY, "MainActivity")
+            bundle.putInt(KEY_COUNT, count)
+            bundle.putParcelable(KEY_OBJECT,transfer02)
+            bundle.putString(KEY_KIND, "Bundle")
+            intent.putExtras(bundle)
             startActivity(intent)
         }
 
